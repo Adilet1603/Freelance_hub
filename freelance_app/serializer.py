@@ -52,6 +52,7 @@ class CategoryDetailSerializer(serializers.ModelSerializer):
 
 class ProjectSerializer(serializers.ModelSerializer):
     client = UserProfileListSerializer(read_only=True)
+    category = CategoryListSerializer(read_only=True)
     class Meta:
         model = Project
         fields = ['client','title', 'deadline', 'status', 'description', 'budget',
